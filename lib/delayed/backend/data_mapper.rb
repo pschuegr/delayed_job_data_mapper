@@ -11,11 +11,11 @@ module Delayed
         property :id,          Serial
         property :priority,    Integer,   :default => 0,  :index => :run_at_priority
         property :attempts,    Integer,   :default => 0
-        property :handler,     Text,      :lazy => false
+        property :handler,     Text,      :lazy => false, :length =>  16777215
         property :run_at,      DateTime,  :index => :run_at_priority
         property :locked_at,   DateTime,  :index => true, :lazy => false
         property :locked_by,   Text,      :lazy => false
-        property :failed_at,   DateTime,  :lazy => false
+        property :failed_at,   DateTime,  :lazy => false, :length =>  16777215
         property :last_error,  Text,      :lazy => false
         property :queue,       String
 
