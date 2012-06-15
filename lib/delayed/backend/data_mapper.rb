@@ -15,8 +15,8 @@ module Delayed
         property :run_at,      DateTime,  :index => :run_at_priority
         property :locked_at,   DateTime,  :index => true, :lazy => false
         property :locked_by,   Text,      :lazy => false
-        property :failed_at,   DateTime,  :lazy => false, :length =>  16777215
-        property :last_error,  Text,      :lazy => false
+        property :failed_at,   DateTime,  :lazy => false
+        property :last_error,  Text,      :lazy => false, :length =>  16777215
         property :queue,       String
 
         before :save, :set_default_run_at
